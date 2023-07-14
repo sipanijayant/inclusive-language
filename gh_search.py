@@ -10,7 +10,6 @@ API_ENDPOINT = config.gh_api_endpoint
 g = Github(ACCESS_TOKEN)
 eg = Github(base_url=API_ENDPOINT, login_or_token=ACCESS_TOKEN)
 
-print(eg)
 
 def search_github(keyword, filetype):
     logging.basicConfig(filename='githubsearchresultsinfo.log',
