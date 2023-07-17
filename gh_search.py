@@ -39,7 +39,8 @@ def search_github(keyword, filetype):
                 except Exception as e:
                     # Sometimes the string split would find another character, causing an error
                     actualfiletype = path.rsplit(sep='/')[1] 
-                print(f'{keyword},{actualfiletype},{entry.download_url},{entry.path}')
+                repo_name = entry.download_url.split("/")[4]
+                print(f'{keyword},{repo_name},{entry.path}')
             except Exception as e:
                 print("Error: ", e)
         else:
@@ -49,7 +50,8 @@ def search_github(keyword, filetype):
                     actualfiletype = path.rsplit(sep='.')[1]
                 except Exception as e:
                     actualfiletype = path.rsplit(sep='/')[1]
-                print(f'{keyword},{actualfiletype},{file.download_url},{file.path}')
+                repo_name = entry.download_url.split("/")[4]
+                print(f'{keyword},{repo_name},{file.path}')
 
     else:
         # For queries with an exact file type
@@ -65,7 +67,8 @@ def search_github(keyword, filetype):
         for entry in searchresults:
             try:
                 time.sleep(2)
-                print(f'{keyword},{filetype},{entry.html_url},{entry.path}')
+                repo_name = entry.download_url.split("/")[4]
+                print(f'{keyword},{repo_name},{entry.path}')
             except Exception as e:
                 print("Error: ", e)
 
@@ -74,7 +77,8 @@ def search_github(keyword, filetype):
                     actualfiletype = path.rsplit(sep='.')[1]
                 except Exception as e:
                     actualfiletype = path.rsplit(sep='/')[1]
-                print(f'{keyword},{actualfiletype},{file.download_url},{file.path}')
+                repo_name = entry.download_url.split("/")[4]
+                print(f'{keyword},{repo_name},{file.path}')
 
 def search_enterprise_github(keyword, filetype):
     logging.basicConfig(filename='enterprisesearchresultsinfo.log',
@@ -104,7 +108,8 @@ def search_enterprise_github(keyword, filetype):
                 except Exception as e:
                     # Sometimes the string split would find another character, causing an error
                     actualfiletype = path.rsplit(sep='/')[1] 
-                print(f'{keyword},{actualfiletype},{entry.download_url},{entry.path}')
+                repo_name = entry.download_url.split("/")[4]
+                print(f'{keyword},{repo_name},{entry.path}')
             except Exception as e:
                 print("Error: ", e)
         else:
@@ -114,7 +119,8 @@ def search_enterprise_github(keyword, filetype):
                     actualfiletype = path.rsplit(sep='.')[1]
                 except Exception as e:
                     actualfiletype = path.rsplit(sep='/')[1]
-                print(f'{keyword},{actualfiletype},{file.download_url},{file.path}')
+                repo_name = entry.download_url.split("/")[4]
+                print(f'{keyword},{repo_name},{file.path}')
 
     else:
         # For queries with an exact file type
@@ -137,7 +143,8 @@ def search_enterprise_github(keyword, filetype):
                 except Exception as e:
                     # Sometimes the string split would find another character, causing an error
                     actualfiletype = path.rsplit(sep='/')[1] 
-                print(f'{keyword},{actualfiletype},{entry.download_url},{entry.path}')
+                repo_name = entry.download_url.split("/")[4]
+                print(f'{keyword},{repo_name},{entry.path}')
             except Exception as e:
                 print("Error: ", e)
         else:
@@ -147,7 +154,8 @@ def search_enterprise_github(keyword, filetype):
                     actualfiletype = path.rsplit(sep='.')[1]
                 except Exception as e:
                     actualfiletype = path.rsplit(sep='/')[1]
-                print(f'{keyword},{actualfiletype},{file.download_url},{file.path}')
+                repo_name = entry.download_url.split("/")[4]
+                print(f'{keyword},{repo_name},{file.path}')
 
 if __name__ == '__main__':
     which_github = input('Enter Enterprise for Enterprise GitHub, otherwise by default search GitHub: ')
