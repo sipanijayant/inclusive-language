@@ -39,7 +39,7 @@ def search_github(keyword, filetype):
                 except Exception as e:
                     # Sometimes the string split would find another character, causing an error
                     actualfiletype = path.rsplit(sep='/')[1] 
-                repo_name = entry.download_url.split("/")[4]
+                repo_name = entry.download_url.split("/")[5]
                 print(f'{keyword},{repo_name},{entry.path}')
             except Exception as e:
                 print("Error: ", e)
@@ -50,7 +50,7 @@ def search_github(keyword, filetype):
                     actualfiletype = path.rsplit(sep='.')[1]
                 except Exception as e:
                     actualfiletype = path.rsplit(sep='/')[1]
-                repo_name = entry.download_url.split("/")[4]
+                repo_name = entry.download_url.split("/")[5]
                 print(f'{keyword},{repo_name},{file.path}')
 
     else:
@@ -67,7 +67,7 @@ def search_github(keyword, filetype):
         for entry in searchresults:
             try:
                 time.sleep(2)
-                repo_name = entry.download_url.split("/")[4]
+                repo_name = entry.download_url.split("/")[5]
                 print(f'{keyword},{repo_name},{entry.path}')
             except Exception as e:
                 print("Error: ", e)
@@ -77,7 +77,7 @@ def search_github(keyword, filetype):
                     actualfiletype = path.rsplit(sep='.')[1]
                 except Exception as e:
                     actualfiletype = path.rsplit(sep='/')[1]
-                repo_name = entry.download_url.split("/")[4]
+                repo_name = entry.download_url.split("/")[5]
                 print(f'{keyword},{repo_name},{file.path}')
 
 def search_enterprise_github(keyword, filetype):
@@ -108,7 +108,7 @@ def search_enterprise_github(keyword, filetype):
                 except Exception as e:
                     # Sometimes the string split would find another character, causing an error
                     actualfiletype = path.rsplit(sep='/')[1] 
-                repo_name = entry.download_url.split("/")[4]
+                repo_name = entry.download_url.split("/")[5]
                 print(f'{keyword},{repo_name},{entry.path}')
             except Exception as e:
                 print("Error: ", e)
@@ -119,7 +119,7 @@ def search_enterprise_github(keyword, filetype):
                     actualfiletype = path.rsplit(sep='.')[1]
                 except Exception as e:
                     actualfiletype = path.rsplit(sep='/')[1]
-                repo_name = entry.download_url.split("/")[4]
+                repo_name = entry.download_url.split("/")[5]
                 print(f'{keyword},{repo_name},{file.path}')
 
     else:
@@ -143,7 +143,7 @@ def search_enterprise_github(keyword, filetype):
                 except Exception as e:
                     # Sometimes the string split would find another character, causing an error
                     actualfiletype = path.rsplit(sep='/')[1] 
-                repo_name = entry.download_url.split("/")[4]
+                repo_name = entry.download_url.split("/")[5]
                 print(f'{keyword},{repo_name},{entry.path}')
             except Exception as e:
                 print("Error: ", e)
@@ -154,7 +154,7 @@ def search_enterprise_github(keyword, filetype):
                     actualfiletype = path.rsplit(sep='.')[1]
                 except Exception as e:
                     actualfiletype = path.rsplit(sep='/')[1]
-                repo_name = entry.download_url.split("/")[4]
+                repo_name = entry.download_url.split("/")[5]
                 print(f'{keyword},{repo_name},{file.path}')
 
 if __name__ == '__main__':
