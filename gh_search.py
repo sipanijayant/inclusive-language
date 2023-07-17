@@ -19,7 +19,7 @@ def search_github(keyword, filetype):
                         level=logging.INFO)
     logger = logging.getLogger()
     if filetype == 'any':
-        query = f'"{keyword}" org:{config.gh_orgname}'
+        query = f'"{keyword}" repo:{config.gh_orgname}'
         searchresults = g.search_code(query, order='desc')
         # search_code returns a paginated_list https://pygithub.readthedocs.io/en/latest/utilities.html?highlight=pagination#pagination
         logger.info(f'Found {searchresults.totalCount} entries with {keyword}')
@@ -50,7 +50,7 @@ def search_github(keyword, filetype):
 
     else:
         # For queries with an exact file type
-        query = f'"{keyword}" org:{config.gh_orgname} in:file extension:{filetype}'
+        query = f'"{keyword}" repo:{config.gh_orgname} in:file extension:{filetype}'
         searchresults = g.search_code(query, order='desc')
         
         logger.info(f'Found {searchresults.totalCount} entries(s) with {keyword}')
@@ -77,7 +77,7 @@ def search_enterprise_github(keyword, filetype):
                         level=logging.DEBUG)
     logger = logging.getLogger()
     if filetype == 'any':
-        query = f'"{keyword}" org:{config.gh_orgname}'
+        query = f'"{keyword}" repo:{config.gh_orgname}'
         print("Query is: ", query)
         searchresults = eg.search_code(query, order='desc')
         # search_code returns a paginated_list https://pygithub.readthedocs.io/en/latest/utilities.html?highlight=pagination#pagination
@@ -109,7 +109,7 @@ def search_enterprise_github(keyword, filetype):
 
     else:
         # For queries with an exact file type
-        query = f'"{keyword}" org:{config.gh_orgname} in:file extension:{filetype}'
+        query = f'"{keyword}" repo:{config.gh_orgname} in:file extension:{filetype}'
         searchresults = eg.search_code(query, order='desc')
         
         logger.info(f'Found {searchresults.totalCount} entries(s) with {keyword}')
